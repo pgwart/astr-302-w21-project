@@ -94,7 +94,6 @@ def generate_plots(gsize, ra, dec, ang, style):
         ax2.set_xlabel('G-R')        
     except:
         fig, (ax1,ax2) = plt.subplots(1,2, figsize = (20,10))
-        
     return
 
 def plots():
