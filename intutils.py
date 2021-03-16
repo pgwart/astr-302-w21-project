@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from astroquery.sdss import SDSS
 from ipywidgets import interactive_output, IntSlider, FloatSlider, Layout, Text, jslink, GridBox, Dropdown, Button, FloatText
-import pandas as pd
+#import pandas as pd
 
 
 def res(ra, dec, ang):
