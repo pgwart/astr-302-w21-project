@@ -8,6 +8,7 @@
 ### There is a slight delay after updating parameters as it must run a new query. 
 ### If the query is empty, such as a target outside of the survey, blank plots will be generated.
 
+import matplotlib.pyplot as plt
 import numpy as np
 from astroquery.sdss import SDSS
 from ipywidgets import interactive_output, IntSlider, FloatSlider, Layout, Text, jslink, GridBox, Dropdown, Button, FloatText
