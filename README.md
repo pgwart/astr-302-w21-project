@@ -6,4 +6,4 @@ between 14 and 24. The area searched is within a radius (in arcminutes, up to 12
 To use, import into a Jupyter notebook and call the plots() function, then specify parameters with widgets. There are also widgets for controlling the appearance of the 
 Hess diagram. 
 
-There is a slight delay after updating parameters as it must run a new query. If the query finds no stars, such as a target outside of the survey, blank plots will be generated.
+There is a slight delay after updating parameters as it must run a new query. If the query is empty, such as a target outside of the survey, blank plots will be generated.
