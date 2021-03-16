@@ -1,11 +1,13 @@
-###  This module queries the SDSS data set to generate a scatter plot and Hess diagram.
-### The query finds all stars with g - r between -0.5 and 2.5 and g between 14 and 24
-### within a radius (in arcminutes) of a given RA and dec (in degrees).
-###
-###  To use, import into a Jupyter notebook and call the plots() function,
-### then specify parameters with widgets.
+### The interactiveplots module queries the SDSS data set on the fly to generate a scatter plot and Hess diagram. 
+### The query finds all stars with g - r between -0.5 and 2.5 and g between 14 and 24. The area searched is within a 
+### radius (in arcminutes, up to 120") of a given RA and dec (in degrees), which are manually entered through widgets.
 
-import matplotlib.pyplot as plt
+### To use, import into a Jupyter notebook and call the plots() function, then specify parameters with widgets. 
+### There are also widgets for controlling the appearance of the Hess diagram.
+
+### There is a slight delay after updating parameters as it must run a new query. 
+### If the query is empty, such as a target outside of the survey, blank plots will be generated.
+
 import numpy as np
 from astroquery.sdss import SDSS
 from ipywidgets import interactive_output, IntSlider, FloatSlider, Layout, Text, jslink, GridBox, Dropdown, Button, FloatText
