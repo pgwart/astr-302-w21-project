@@ -12,4 +12,4 @@ There is a slight delay after updating parameters as it must run a new query.
 If the query is empty, such as a target outside of the survey, blank plots will be generated.
 
 To save a query as a csv or a figure as a png use the functions saveCSV and saveFig. For either function,
-parameters are name, RA, dec, and search radius. For saveFig, you may optionally specify gridsize(default 100) and colormap (default 'viridis').
+parameters are filename, RA, dec, and search radius. For saveFig, you may optionally specify gridsize(default 100) and colormap (default 'viridis').
