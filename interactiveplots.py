@@ -102,3 +102,26 @@ def plots():
     """Displays widgets and plots"""
     out = interactive_output(generate_plots, {'gsize':gridSlider, 'ra':RABox, 'ra':RASlider, 'dec':DECBox, 'dec':DECSlider, 'ang':radBox, 'ang':radSlider, 'style':hexDrop})
     return display(widgrid, out)
+
+#Save functions
+def saveCSV(name, ra, dec, ang):
+    r = res(ra,dec,ang)
+    return r.write('{}.csv'.format(name), overwrite = True)
+
+def saveFig(name, ra, dec, ang, gsize = 100, style = 'viridis'):
+    r = res(ra,dec,ang)
+    try:
+        g, gr = [r['g'], r['g']-r['r']]
+        fig, (ax1,ax2) = plt.subplots(1,2, figsize = (20,10))
+        ax1.scatter(r['ra'], r['dec'], marker='.', s=0.8)
+        ax2.hexbin(gr, g, gridsize = gsize, bins='log', cmap = style)
+        plt.ylim(24,14)
+        ax1.set_ylabel('Dec')
+        ax1.set_xlabel('RA')
+        ax2.set_ylabel('G')
+        ax2.set_xlabel('G-R')
+    except:
+        print('Error: check coordinates')
+        end()
+    return fig.savefig('{}.png'.format(name))
+    
