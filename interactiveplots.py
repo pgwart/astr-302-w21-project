@@ -95,10 +95,12 @@ def plots():
 
 #Save functions
 def saveCSV(name, ra, dec, ang):
+    """Saves a query as an .csv file"""
     r = res(ra,dec,ang)
     return r.write('{}.csv'.format(name), overwrite = True)
 
 def saveFig(name, ra, dec, ang, gsize = 100, style = 'viridis'):
+    """Saves a figure as a .png file"""
     r = res(ra,dec,ang)
     try:
         g, gr = [r['g'], r['g']-r['r']]
