@@ -11,6 +11,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from astroquery.sdss import SDSS
+import pandas as pd
 from ipywidgets import interactive_output, IntSlider, FloatSlider, Layout, Text, jslink, GridBox, Dropdown, Button, FloatText
 
 def res(ra, dec, ang):
@@ -69,9 +70,10 @@ widgrid = GridBox(children = [RABox, RASlider, gridSlider, DECBox, DECSlider, he
                   grid_template_areas = '''
                   "RABox RASlider gridSlider"
                   "DECBox DECSlider hexDrop"
-                  "radBox radSlider . "
+                  "radBox radSlider ."
                   ''')
                  ) 
+
 #Link boxes with sliders
 RALink = jslink((RABox, 'value'), (RASlider, 'value'))
 DECLink = jslink((DECBox, 'value'), (DECSlider, 'value'))
@@ -91,10 +93,10 @@ def generate_plots(gsize, ra, dec, ang, style):
         ax1.set_ylabel('Dec')
         ax1.set_xlabel('RA')
         ax2.set_ylabel('G')
-        ax2.set_xlabel('G-R')        
+        ax2.set_xlabel('G-R')
     except:
         fig, (ax1,ax2) = plt.subplots(1,2, figsize = (20,10))
-    return
+
 
 def plots():
     """Displays widgets and plots"""
